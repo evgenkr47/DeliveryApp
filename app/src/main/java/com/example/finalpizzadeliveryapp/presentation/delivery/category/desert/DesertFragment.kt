@@ -23,7 +23,7 @@ class DesertFragment : Fragment() {
     private var _binding: FragmentDesertBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<DeliveryViewModel>()
-    lateinit var desertAdapter: DesertAdapter
+    private lateinit var desertAdapter: DesertAdapter
 
 
     override fun onCreateView(

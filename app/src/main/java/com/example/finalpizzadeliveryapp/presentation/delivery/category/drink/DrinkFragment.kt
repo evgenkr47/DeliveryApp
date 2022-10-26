@@ -24,7 +24,7 @@ class DrinkFragment : Fragment() {
     private var _binding: FragmentDrinkBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<DeliveryViewModel>()
-    lateinit var drinkAdapter: DrinkAdapter
+    private lateinit var drinkAdapter: DrinkAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

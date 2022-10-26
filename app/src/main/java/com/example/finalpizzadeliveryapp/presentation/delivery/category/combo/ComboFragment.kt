@@ -26,7 +26,7 @@ class ComboFragment : Fragment() {
     private var _binding: FragmentComboBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<DeliveryViewModel>()
-    lateinit var comboAdapter: ComboAdapter
+    private lateinit var comboAdapter: ComboAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
