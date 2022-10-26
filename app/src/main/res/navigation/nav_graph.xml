@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/deliveryFragment">
+
+    <fragment
+        android:id="@+id/deliveryFragment"
+        android:name="com.example.finalpizzadeliveryapp.presentation.delivery.DeliveryFragment"
+        android:label="fragment_delivery"
+        tools:layout="@layout/fragment_delivery" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.finalpizzadeliveryapp.presentation.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/shoppingCartFragment"
+        android:name="com.example.finalpizzadeliveryapp.presentation.shoppingcart.ShoppingCartFragment"
+        android:label="fragment_shopping_cart"
+        tools:layout="@layout/fragment_shopping_cart" >
+        <action
+            android:id="@+id/action_shoppingCartFragment_to_deliveryFragment"
+            app:destination="@id/deliveryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comboFragment"
+        android:name="com.example.finalpizzadeliveryapp.presentation.delivery.category.combo.ComboFragment"
+        android:label="fragment_combo"
+        tools:layout="@layout/fragment_combo" >
+        <action
+            android:id="@+id/action_comboFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/desertFragment"
+        android:name="com.example.finalpizzadeliveryapp.presentation.delivery.category.desert.DesertFragment"
+        android:label="fragment_desert"
+        tools:layout="@layout/fragment_desert" >
+        <action
+            android:id="@+id/action_desertFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/drinkFragment"
+        android:name="com.example.finalpizzadeliveryapp.presentation.delivery.category.drink.DrinkFragment"
+        android:label="fragment_drink"
+        tools:layout="@layout/fragment_drink" >
+        <action
+            android:id="@+id/action_drinkFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pizzaFragment"
+        android:name="com.example.finalpizzadeliveryapp.presentation.delivery.category.pizza.PizzaFragment"
+        android:label="fragment_pizza"
+        tools:layout="@layout/fragment_pizza" >
+        <action
+            android:id="@+id/action_pizzaFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.finalpizzadeliveryapp.presentation.delivery.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+</navigation>

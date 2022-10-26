@@ -1,0 +1,38 @@
+package com.example.finalpizzadeliveryapp.data.network.mapper
+
+import com.example.finalpizzadeliveryapp.data.network.entity.Pizza
+import com.example.finalpizzadeliveryapp.data.network.entity.DeliveryResponse
+import com.example.finalpizzadeliveryapp.domain.model.PizzaModel
+import com.example.finalpizzadeliveryapp.domain.util.EntityMapper
+import retrofit2.Response
+import javax.inject.Inject
+
+class PizzaMapper @Inject constructor() : EntityMapper<Pizza, PizzaModel> {
+    override fun mapFromEntity(entity: Pizza): PizzaModel {
+        return PizzaModel(
+            id = entity.id,
+            title = entity.title,
+            description = entity.description,
+            image = entity.image,
+            price = entity.price
+        )
+    }
+
+    override fun mapToEntity(domainModel: PizzaModel): Pizza {
+        return Pizza(
+            id = domainModel.id,
+            title = domainModel.title,
+            description = domainModel.description,
+            image = domainModel.image,
+            price = domainModel.price
+        )
+    }
+
+    fun mapResponseToList(entity: Response<DeliveryResponse>): List<Pizza> {
+        return entity.body()!!.pizza
+    }
+
+
+
+
+}
