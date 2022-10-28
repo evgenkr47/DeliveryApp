@@ -1,4 +1,4 @@
-package com.example.finalpizzadeliveryapp.utils
+package com.example.finalpizzadeliveryapp.domain.utils
 
 import kotlinx.coroutines.flow.*
 

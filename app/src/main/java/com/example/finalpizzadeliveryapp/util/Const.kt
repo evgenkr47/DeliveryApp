@@ -1,4 +1,4 @@
-package com.example.finalpizzadeliveryapp.utils
+package com.example.finalpizzadeliveryapp.util
 
 class Const {
 

@@ -1,19 +1,12 @@
 package com.example.finalpizzadeliveryapp.data
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Transformations
 import com.example.finalpizzadeliveryapp.data.database.DeliveryDao
 import com.example.finalpizzadeliveryapp.data.network.ApiService
-import com.example.finalpizzadeliveryapp.data.network.entity.Combo
-import com.example.finalpizzadeliveryapp.data.network.entity.Desert
-import com.example.finalpizzadeliveryapp.data.network.entity.Drink
-import com.example.finalpizzadeliveryapp.data.network.entity.Pizza
 import com.example.finalpizzadeliveryapp.data.network.mapper.*
 import com.example.finalpizzadeliveryapp.domain.DeliveryRepository
 import com.example.finalpizzadeliveryapp.domain.model.*
-import com.example.finalpizzadeliveryapp.utils.networkBoundResource
+import com.example.finalpizzadeliveryapp.domain.utils.networkBoundResource
 import kotlinx.coroutines.delay
-import retrofit2.Response
 import javax.inject.Inject
 
 class DeliveryRepositoryImpl @Inject constructor(
@@ -25,7 +18,8 @@ class DeliveryRepositoryImpl @Inject constructor(
     override fun getPizzaList() =
         networkBoundResource(
             query = {
-                deliveryDao.getAllPizza()
+
+                deliveryMappers.pizzaMapper.mapFlow(deliveryDao.getAllPizza())
             },
             fetch = {
                 delay(2000)
@@ -43,7 +37,7 @@ class DeliveryRepositoryImpl @Inject constructor(
     override fun getDrinkList() =
         networkBoundResource(
             query = {
-                deliveryDao.getAllDrink()
+                deliveryMappers.drinkMapper.mapFlow(deliveryDao.getAllDrink())
             },
             fetch = {
                 delay(2000)
@@ -60,7 +54,7 @@ class DeliveryRepositoryImpl @Inject constructor(
     override fun getDesertList() =
         networkBoundResource(
             query = {
-                deliveryDao.getAllDesert()
+                deliveryMappers.desertMapper.mapFlow(deliveryDao.getAllDesert())
             },
             fetch = {
                 delay(2000)
@@ -77,7 +71,7 @@ class DeliveryRepositoryImpl @Inject constructor(
     override fun getComboList() =
         networkBoundResource(
             query = {
-                deliveryDao.getAllCombo()
+                deliveryMappers.comboMapper.mapFlow(deliveryDao.getAllCombo())
             },
             fetch = {
                 delay(2000)

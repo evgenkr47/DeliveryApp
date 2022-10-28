@@ -8,16 +8,12 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.finalpizzadeliveryapp.R
 import com.example.finalpizzadeliveryapp.databinding.FragmentDesertBinding
-import com.example.finalpizzadeliveryapp.databinding.FragmentDrinkBinding
 import com.example.finalpizzadeliveryapp.presentation.delivery.DeliveryViewModel
-import com.example.finalpizzadeliveryapp.presentation.delivery.category.drink.DrinkAdapter
-import com.example.finalpizzadeliveryapp.presentation.delivery.category.pizza.PizzaFragment
-import com.example.finalpizzadeliveryapp.utils.Resource
+import com.example.finalpizzadeliveryapp.domain.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_desert.*
-import kotlinx.android.synthetic.main.fragment_drink.*
+
 @AndroidEntryPoint
 class DesertFragment : Fragment() {
     private var _binding: FragmentDesertBinding? = null

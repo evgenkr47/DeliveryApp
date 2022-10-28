@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.finalpizzadeliveryapp.databinding.FragmentPizzaBinding
 import com.example.finalpizzadeliveryapp.presentation.delivery.DeliveryViewModel
-import com.example.finalpizzadeliveryapp.utils.Resource
+import com.example.finalpizzadeliveryapp.domain.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_pizza.*
 

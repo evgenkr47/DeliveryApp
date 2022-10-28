@@ -12,7 +12,7 @@ import com.example.finalpizzadeliveryapp.data.network.entity.Desert
 import com.example.finalpizzadeliveryapp.domain.model.DesertModel
 import kotlinx.android.synthetic.main.delivery_item.view.*
 
-class DesertAdapter: ListAdapter<Desert, DesertAdapter.DesertViewHolder>(DesertItemDiffUtilCallback()) {
+class DesertAdapter: ListAdapter<DesertModel, DesertAdapter.DesertViewHolder>(DesertItemDiffUtilCallback()) {
     inner class DesertViewHolder(view: View): RecyclerView.ViewHolder(view)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DesertViewHolder {
@@ -31,12 +31,12 @@ class DesertAdapter: ListAdapter<Desert, DesertAdapter.DesertViewHolder>(DesertI
         }
     }
 
-    class DesertItemDiffUtilCallback: DiffUtil.ItemCallback<Desert>() {
-        override fun areItemsTheSame(oldItem: Desert, newItem: Desert): Boolean {
+    class DesertItemDiffUtilCallback: DiffUtil.ItemCallback<DesertModel>() {
+        override fun areItemsTheSame(oldItem: DesertModel, newItem: DesertModel): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Desert, newItem: Desert): Boolean {
+        override fun areContentsTheSame(oldItem: DesertModel, newItem: DesertModel): Boolean {
             return oldItem == newItem
         }
     }

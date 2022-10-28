@@ -12,7 +12,7 @@ import com.example.finalpizzadeliveryapp.data.network.entity.Drink
 import com.example.finalpizzadeliveryapp.domain.model.DrinkModel
 import kotlinx.android.synthetic.main.delivery_item.view.*
 
-class DrinkAdapter: ListAdapter<Drink, DrinkAdapter.DrinkViewHolder>(DrinkItemDiffUtilCallback()) {
+class DrinkAdapter: ListAdapter<DrinkModel, DrinkAdapter.DrinkViewHolder>(DrinkItemDiffUtilCallback()) {
     inner class DrinkViewHolder(view: View): RecyclerView.ViewHolder(view)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DrinkViewHolder {
@@ -31,12 +31,12 @@ class DrinkAdapter: ListAdapter<Drink, DrinkAdapter.DrinkViewHolder>(DrinkItemDi
         }
     }
 
-    class DrinkItemDiffUtilCallback: DiffUtil.ItemCallback<Drink>() {
-        override fun areItemsTheSame(oldItem: Drink, newItem: Drink): Boolean {
+    class DrinkItemDiffUtilCallback: DiffUtil.ItemCallback<DrinkModel>() {
+        override fun areItemsTheSame(oldItem: DrinkModel, newItem: DrinkModel): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Drink, newItem: Drink): Boolean {
+        override fun areContentsTheSame(oldItem: DrinkModel, newItem: DrinkModel): Boolean {
             return oldItem == newItem
         }
     }

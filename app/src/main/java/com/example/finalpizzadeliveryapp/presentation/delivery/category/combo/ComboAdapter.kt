@@ -12,7 +12,7 @@ import com.example.finalpizzadeliveryapp.data.network.entity.Combo
 import com.example.finalpizzadeliveryapp.domain.model.ComboModel
 import kotlinx.android.synthetic.main.delivery_item.view.*
 
-class ComboAdapter: ListAdapter<Combo, ComboAdapter.ComboViewHolder>(ComboItemDiffUtilCallback()) {
+class ComboAdapter: ListAdapter<ComboModel, ComboAdapter.ComboViewHolder>(ComboItemDiffUtilCallback()) {
     inner class ComboViewHolder(view: View): RecyclerView.ViewHolder(view)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComboViewHolder {
@@ -31,12 +31,12 @@ class ComboAdapter: ListAdapter<Combo, ComboAdapter.ComboViewHolder>(ComboItemDi
         }
     }
 
-    class ComboItemDiffUtilCallback: DiffUtil.ItemCallback<Combo>() {
-        override fun areItemsTheSame(oldItem: Combo, newItem: Combo): Boolean {
+    class ComboItemDiffUtilCallback: DiffUtil.ItemCallback<ComboModel>() {
+        override fun areItemsTheSame(oldItem: ComboModel, newItem: ComboModel): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Combo, newItem: Combo): Boolean {
+        override fun areContentsTheSame(oldItem: ComboModel, newItem: ComboModel): Boolean {
             return oldItem == newItem
         }
 

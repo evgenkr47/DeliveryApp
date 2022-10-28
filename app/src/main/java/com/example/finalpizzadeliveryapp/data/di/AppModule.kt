@@ -17,7 +17,7 @@ import com.example.finalpizzadeliveryapp.domain.usecases.list.GetComboListUseCas
 import com.example.finalpizzadeliveryapp.domain.usecases.list.GetDesertListUseCase
 import com.example.finalpizzadeliveryapp.domain.usecases.list.GetDrinkListUseCase
 import com.example.finalpizzadeliveryapp.domain.usecases.list.GetPizzaListUseCase
-import com.example.finalpizzadeliveryapp.utils.Const.Companion.BASE_URL
+import com.example.finalpizzadeliveryapp.util.Const.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

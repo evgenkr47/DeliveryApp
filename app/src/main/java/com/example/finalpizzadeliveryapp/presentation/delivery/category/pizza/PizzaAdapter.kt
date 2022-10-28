@@ -12,7 +12,7 @@ import com.example.finalpizzadeliveryapp.data.network.entity.Pizza
 import com.example.finalpizzadeliveryapp.domain.model.PizzaModel
 import kotlinx.android.synthetic.main.delivery_item.view.*
 
-class PizzaAdapter: ListAdapter<Pizza, PizzaAdapter.PizzaViewHolder>(PizzaItemDiffUtilCallback()) {
+class PizzaAdapter: ListAdapter<PizzaModel, PizzaAdapter.PizzaViewHolder>(PizzaItemDiffUtilCallback()) {
     inner class PizzaViewHolder(view: View): RecyclerView.ViewHolder(view)
 
 
@@ -32,12 +32,12 @@ class PizzaAdapter: ListAdapter<Pizza, PizzaAdapter.PizzaViewHolder>(PizzaItemDi
         }
     }
 
-    class PizzaItemDiffUtilCallback: DiffUtil.ItemCallback<Pizza>() {
-        override fun areItemsTheSame(oldItem: Pizza, newItem: Pizza): Boolean {
+    class PizzaItemDiffUtilCallback: DiffUtil.ItemCallback<PizzaModel>() {
+        override fun areItemsTheSame(oldItem: PizzaModel, newItem: PizzaModel): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Pizza, newItem: Pizza): Boolean {
+        override fun areContentsTheSame(oldItem: PizzaModel, newItem: PizzaModel): Boolean {
             return oldItem == newItem
         }
 

@@ -1,4 +1,4 @@
-package com.example.finalpizzadeliveryapp.utils
+package com.example.finalpizzadeliveryapp.domain.utils
 
 sealed class Resource <T> (
     val data : T ? =  null,

@@ -1,4 +1,4 @@
-package com.example.finalpizzadeliveryapp.domain.util
+package com.example.finalpizzadeliveryapp.domain.utils
 
 interface EntityMapper <Entity, DomainModel> {
     fun mapFromEntity(entity: Entity): DomainModel

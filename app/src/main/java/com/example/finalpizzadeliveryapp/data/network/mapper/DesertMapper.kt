@@ -1,10 +1,11 @@
 package com.example.finalpizzadeliveryapp.data.network.mapper
 
-import com.example.finalpizzadeliveryapp.data.network.entity.Combo
 import com.example.finalpizzadeliveryapp.data.network.entity.DeliveryResponse
 import com.example.finalpizzadeliveryapp.data.network.entity.Desert
 import com.example.finalpizzadeliveryapp.domain.model.DesertModel
-import com.example.finalpizzadeliveryapp.domain.util.EntityMapper
+import com.example.finalpizzadeliveryapp.domain.utils.EntityMapper
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import retrofit2.Response
 import javax.inject.Inject
 
@@ -31,6 +32,14 @@ class DesertMapper @Inject constructor(): EntityMapper<Desert, DesertModel> {
 
     fun mapResponseToList(entity: Response<DeliveryResponse>): List<Desert> {
         return entity.body()!!.deserts
+    }
+
+    fun toDomainList(initial: List<Desert>): List<DesertModel>{
+        return initial.map { mapFromEntity(it) }
+    }
+
+    fun mapFlow(entity: Flow<List<Desert>>): Flow<List<DesertModel>> {
+        return entity.map { toDomainList(it) }
     }
 
 
